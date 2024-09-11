@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+</head>
+<body>
+  <header>Form Validation</header>
+  <div class="form-container">
+    <form action="#" id="form-validation" novalidate>
+      <label for="email">
+        <span class="span-label">Email:</span>
+        <input type="email" id="email" name="email" required>
+        <span class="span-error" id="email-error" aria-live="polite"></span>
+      </label>
+      <label for="country">
+        <span class="span-label">Country:</span>
+        <select name="country" id="country" required>
+          <option value="">Select a country</option>
+          <option value="usa">United States</option>
+          <option value="switzerland">Switzerland</option>
+          <option value="japan">Japan</option>
+          <option value="canada">Canada</option>
+          <option value="germany">Germany</option>
+          <option value="new-zealand">New Zealand</option>
+          <option value="denmark">Denmark</option>
+        </select>
+        <span class="span-error" id="country-error" aria-live="polite"></span>
+      </label>
+      <label for="zip">
+        <span class="span-label">Zip Code:</span>
+        <input type="number" id="zip" name="zip" required>
+        <span class="span-error" id="zip-error" aria-live="polite"></span>
+      </label>
+      <label for="password">
+        <span class="span-label">Password:</span>
+        <input type="password" id="password" name="password" minlength="8" required>
+        <span class="span-error" id="password-error" aria-live="polite"></span>
+      </label>
+      <label for="confirm-password">
+        <span class="span-label">Confirm Password:</span>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <span class="span-error" id="confirm-password-error" aria-live="polite"></span>
+      </label>
+      <button>Submit</button>
+    </form>
+  </div>
+  <footer>
+    <a href="https://github.com/Triangular100/form-validation" target="_blank">
+      <img src="./github.svg" alt="GitHub Repo">
+    </a>
+  </footer>
+</body>
+</html>

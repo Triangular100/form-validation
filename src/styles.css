@@ -1,0 +1,145 @@
+:root {
+  --header-color: #00458b;
+  --header-text-color: #e6f7ff;
+  --body-color: #f4fbff;
+  --form-text-color: #003264;
+  --border-color: #00458b;
+  --submit-color: #00458b;
+  --submit-color-hover: #006bd5;
+  --error-text-color: #C7253E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+select,
+button {
+  display: block;
+  font-family: inherit;
+  font-size: 100%;
+  width: 100%;
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}
+
+body {
+  background-color: var(--body-color);
+  min-height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    "header"
+    "form"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: var(--header-color);
+  color: var(--header-text-color);
+}
+
+.form-container {
+  grid-area: form;
+  height: 100%;
+  padding: 2rem;
+  padding-top: 5rem;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 1rem;
+
+  height: fit-content;
+  border-radius: 8px;
+  border: 2px solid var(--form-text-color);
+  padding: 2rem;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: var(--form-color);
+  color: var(--form-text-color);
+}
+
+.form-container form label {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+    "label input"
+    "empty error";
+  align-items: center;
+
+  padding-right: 2rem;
+}
+
+.form-container form label .span-label {
+  padding-right: 1rem;
+  text-align: end;
+}
+
+.form-container form label .span-error {
+  display: none;
+  padding-top: 0.3rem;
+  grid-area: error;
+  color: var(--error-text-color);
+}
+
+.form-container form label .span-error.show {
+  display: block;
+}
+
+.form-container form input,
+.form-container form select {
+  grid-area: input;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+}
+
+.form-container form input.interacted:invalid,
+.form-container form select.interacted:invalid {
+  border: 2px solid var(--error-text-color);
+}
+
+.form-container form button {
+  align-self: center;
+  cursor: pointer;
+  max-width: 15rem;
+  background-color: var(--submit-color);
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.form-container form button:hover {
+  background-color: var(--submit-color-hover);
+}
+
+footer {
+  background-color: var(--header-color);
+  grid-area: footer;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer img {
+  height: 2rem;
+  width: 2rem;
+}
